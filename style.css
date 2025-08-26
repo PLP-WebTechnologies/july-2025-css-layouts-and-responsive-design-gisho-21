@@ -1,0 +1,148 @@
+/* Plain beginner CSS:
+   - Grid for page layout (main + sidebar)
+   - Flexbox for nav + card row
+   - Simple media queries
+*/
+
+/* Reset bits */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #222;
+  background: #f7f7f7;
+}
+
+/* Simple container */
+.site-header,
+.layout,
+.site-footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Links & buttons */
+a { color: #0a66c2; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  background: #0a66c2;
+  color: #fff;
+  border-radius: 6px;
+}
+
+/* Header (Grid) + Nav (Flexbox) */
+.site-header {
+  padding: 16px 0;
+  border-bottom: 1px solid #e3e3e3;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+.logo { margin: 0; font-size: 1.4rem; }
+
+.site-nav .nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;      /* Flexbox */
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.site-nav a {
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+}
+
+/* Page layout (Grid) */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 column by default */
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Simple sections */
+.hero,
+.features,
+.articles,
+.newsletter,
+.sidebar {
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.hero { text-align: center; }
+.hero-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+/* Card row (Flexbox) */
+.card-row {
+  display: flex;      /* Flexbox */
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.card {
+  flex: 1 1 220px;    /* grow, shrink, base width */
+  min-width: 200px;
+  background: #fafafa;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* Articles list */
+.post + .post { margin-top: 12px; }
+
+/* Newsletter form (stacked) */
+.newsletter-form {
+  max-width: 500px;
+}
+.newsletter-form input,
+.newsletter-form button {
+  width: 100%;
+  display: block;
+}
+.newsletter-form input {
+  padding: 10px;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.site-footer {
+  padding: 24px 0 40px;
+  color: #666;
+  text-align: center;
+}
+
+/* Media queries */
+/* Tablet (≥ 768px): 2-column layout */
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 2fr 1fr; /* main | sidebar */
+    align-items: start;
+  }
+  .hero { text-align: left; }
+}
+
+/* Desktop (≥ 1024px): a bit more gap */
+@media (min-width: 1024px) {
+  .layout { gap: 24px; }
+}

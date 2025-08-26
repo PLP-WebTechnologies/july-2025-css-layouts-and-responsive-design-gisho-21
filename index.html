@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Layout (Beginner — Plain)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <h1 class="logo">My Layout</h1>
+
+    <!-- Flexbox nav -->
+    <nav class="site-nav">
+      <ul class="nav-list">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page layout (Grid): main + sidebar -->
+  <div class="layout">
+    <main>
+      <!-- Hero -->
+      <section id="hero" class="hero">
+        <img
+          src="https://via.placeholder.com/800x200.png?text=Hero+Image"
+          alt="Hero placeholder"
+          class="hero-img"
+        />
+        <h2>Modern CSS Layouts</h2>
+        <p>Using Grid for the page layout and Flexbox for smaller parts.</p>
+        <a class="btn" href="#features">See more</a>
+      </section>
+
+      <!-- Flexbox card row -->
+      <section id="features" class="features">
+        <h2>Why this layout works</h2>
+        <div class="card-row">
+          <article class="card">
+            <h3>Grid</h3>
+            <p>Great for page-level (2D) layouts.</p>
+          </article>
+          <article class="card">
+            <h3>Flexbox</h3>
+            <p>Great for rows or columns (1D).</p>
+          </article>
+          <article class="card">
+            <h3>Responsive</h3>
+            <p>Media queries change layout by width.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Simple articles list -->
+      <section id="articles" class="articles">
+        <h2>Latest articles</h2>
+        <article class="post">
+          <h3>Grid Template Areas</h3>
+          <p>Use named areas to place sections.</p>
+        </article>
+        <article class="post">
+          <h3>Flexbox Basics</h3>
+          <p>Align, justify, and wrap items.</p>
+        </article>
+        <article class="post">
+          <h3>Media Queries</h3>
+          <p>Adjust styles for different screens.</p>
+        </article>
+      </section>
+
+      <!-- Newsletter (stacked input + button) -->
+      <section id="newsletter" class="newsletter">
+        <h2>Join the newsletter</h2>
+        <form class="newsletter-form" action="#" method="post">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Sidebar</h2>
+      <ul class="trend-list">
+        <li><a href="#">CSS Grid 101</a></li>
+        <li><a href="#">Flexbox in 5 mins</a></li>
+        <li><a href="#">Simple media queries</a></li>
+        <li><a href="#">Responsive images</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Beginner Layout Demo</p>
+  </footer>
+
+  <script>
+    // Current year in the footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
